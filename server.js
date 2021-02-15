@@ -13,7 +13,7 @@ app.get("/", (req, res) => {
     res.json({ message: 'Welcome to Simple API application.' });
 });
 
-require('./app/routers/customer.routers')(app);
+require('./routers/customer.routers')(app);
 
 // set port, listen for requests
 app.listen(3000, () => {
