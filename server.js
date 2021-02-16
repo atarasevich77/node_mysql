@@ -14,6 +14,7 @@ app.get('/', (req, res) => {
     res.json({ message: 'Welcome to Simple API application.' });
 });
 
+//load env config
 dotenv.config();
 
 require('./routers/customer.routers')(app);
