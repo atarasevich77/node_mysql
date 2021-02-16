@@ -1,5 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const dotenv = require('dotenv');
 
 const app = express();
 
@@ -13,9 +14,12 @@ app.get('/', (req, res) => {
     res.json({ message: 'Welcome to Simple API application.' });
 });
 
+dotenv.config();
+
 require('./routers/customer.routers')(app);
 
 // set port, listen for requests
-app.listen(3000, () => {
-    console.log('Server started, listening port 3000');
+const port = process.env.PORT;
+app.listen(port, () => {
+    console.log(`Server started, listening port ${port}`);
 });
